@@ -16,6 +16,7 @@ func main() {
 	// تست جستجو
 	s := scoob.Scoob{}
 	objects := []string{"سلام", "دنیا", "علیکم", "أريد", "کاف"}
+
 	result := s.DoobySearch("كاف", objects)
 	fmt.Println("Search Result: ", result)
 	s2 := scoob.Scoob{}

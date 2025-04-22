@@ -1,6 +1,10 @@
 package scoob
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/mshamsi502/scoob-search/fa_ar_characters"
+)
 
 // ساختار Scoob برای جستجو
 type Scoob struct{}
@@ -9,8 +13,10 @@ type Scoob struct{}
 func (s Scoob) DoobySearch(query string, objects []string) []string {
 	var result []string
 	for _, obj := range objects {
-		if containsIgnoreCase(obj, query) {
-			result = append(result, obj)
+		convertedText := fa_ar_characters.ArabicToPersianCharacter(obj)
+		convertedQuery := fa_ar_characters.ArabicToPersianCharacter(query)
+		if containsIgnoreCase(convertedText, convertedQuery) {
+			result = append(result, convertedText)
 		}
 	}
 	return result
