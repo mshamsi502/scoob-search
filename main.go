@@ -3,7 +3,6 @@ package main
 
 import (
 	"fmt"
-	"github.com/mshamsi502/scoob-search/scoob"
 )
 
 type Scoob struct{}
