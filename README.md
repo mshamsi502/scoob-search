@@ -56,7 +56,7 @@ This project is a personal initiative by Mohammad Shamsi aimed at building light
 
 Feel free to connect:
 
-📧 mshamsi502@gmail.com
+📧 mshamsi502.dev@gmail.com
 
 Telegram: https://t.me/mshamsi502
 
