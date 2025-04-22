@@ -8,15 +8,20 @@ import (
 )
 
 func main() {
-	// تست تبدیل کاراکترهای عربی به فارسی
+	// تست کانورت عربی به فارسی
 	text := "أريد كاف و ياء و واء في النص"
 	convertedText := fa_ar_characters.ArabicToPersianCharacter(text)
-	fmt.Println("Converted Text:", convertedText)
+	fmt.Println("Converted Text: ", convertedText)
 
-	// استفاده از پکیج scoob برای جستجو
-	scoobInstance := scoob.Scoob{}
-	objects := []string{"شهر", "کتاب", "آسمان"}
-	query := "کتاب"
-	result := scoobInstance.DoobySearch(query, objects)
-	fmt.Println("Search Results:", result)
+	// تست جستجو
+	s := scoob.Scoob{}
+	objects := []string{"سلام", "دنیا", "علیکم", "أريد", "کاف"}
+	result := s.DoobySearch("كاف", objects)
+	fmt.Println("Search Result: ", result)
+	s2 := scoob.Scoob{}
+	result2 := s2.DoobySearch("اريد", objects)
+	fmt.Println("Search Result: ", result2)
+
+	// تست وضعیت پکیج scoob
+	scoob.Test()
 }

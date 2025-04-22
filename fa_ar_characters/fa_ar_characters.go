@@ -1,4 +1,4 @@
-package scoob
+package fa_ar_characters
 
 import (
 	"fmt"
@@ -24,7 +24,7 @@ var KAF_FA = []byte{218, 169}    // ک
 var KAF_AR_01 = []byte{217, 131} // ك
 
 // تابع اصلی برای تبدیل کاراکترهای عربی به فارسی
-func arabicToPersianCharacter(text string) string {
+func ArabicToPersianCharacter(text string) string {
 	text = checkALEF(text)
 	text = checkYE(text)
 	text = checkVAV(text)
@@ -64,7 +64,7 @@ func checkKAF(text string) string {
 func main() {
 	// تست با یک جمله عربی که می‌خواهیم به فارسی تبدیل کنیم
 	text := "أريد كاف و ياء و واء في النص"
-	convertedText := arabicToPersianCharacter(text)
+	convertedText := ArabicToPersianCharacter(text)
 
 	// نمایش نتیجه
 	fmt.Println("Converted Text: ", convertedText)
