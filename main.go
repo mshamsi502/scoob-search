@@ -1,39 +1,22 @@
-// package scoob
 package main
 
 import (
 	"fmt"
+
+	"github.com/mshamsi502/scoob-search/fa_ar_characters"
+	"github.com/mshamsi502/scoob-search/scoob"
 )
 
-type Scoob struct{}
+func main() {
+	// تست تبدیل کاراکترهای عربی به فارسی
+	text := "أريد كاف و ياء و واء في النص"
+	convertedText := fa_ar_characters.ArabicToPersianCharacter(text)
+	fmt.Println("Converted Text:", convertedText)
 
-func (s Scoob) DoobySearch(query string, objects []string) []string {
-	var result []string
-	for _, obj := range objects {
-		if containsIgnoreCase(obj, query) {
-			result = append(result, obj)
-		}
-	}
-	return result
-}
-
-func containsIgnoreCase(text, substr string) bool {
-	return (len(text) >= len(substr)) && (stringMatch(text, substr))
-}
-
-func stringMatch(text, substr string) bool {
-	return stringIndex(text, substr) != -1
-}
-
-func stringIndex(text, substr string) int {
-	for i := 0; i <= len(text)-len(substr); i++ {
-		if text[i:i+len(substr)] == substr {
-			return i
-		}
-	}
-	return -1
-}
-
-func Test() {
-	fmt.Println("Scoob Package Ready 🐾")
+	// استفاده از پکیج scoob برای جستجو
+	scoobInstance := scoob.Scoob{}
+	objects := []string{"شهر", "کتاب", "آسمان"}
+	query := "کتاب"
+	result := scoobInstance.DoobySearch(query, objects)
+	fmt.Println("Search Results:", result)
 }
